@@ -3,64 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to MoNoPoLy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            text-align: center;
-            padding-top: 50px;
-        }
-        h1 {
-            color: #007bff;
-        }
-        p {
-            font-size: 20px;
-            color: #333;
-        }
-        a {
-            text-decoration: none;
-            color: white;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 18px;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        a:hover {
-            background-color: #0056b3;
-        }
-        input[type="email"] {
-            padding: 10px;
-            font-size: 16px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            margin-top: 20px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <title>Welcome to FINOPOLY</title>
+    <link rel="stylesheet" href="finopoly.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
-    <h1>Welcome to FINOPOLY</h1>
-    <p>Kindly Enter the Email to play the game.</p>
-    
-    <input type="email" placeholder="Enter your email" required>
-    <button onclick="playGame()">Play</button>
+    <div class="wave-background"></div>
+    <div class="content">
+        <div class="heading-container">
+            <h1>Welcome to FINOPOLY</h1>
+        </div>
+        <p>Enter your email to play the game.</p>
+    </div>
 
-    
+    <div class="input-container">
+        <input type="email" placeholder="Enter your email" required>
+        <button onclick="playGame()">Play</button>
+    </div>
 
     <script>
         function playGame() {
@@ -68,7 +26,7 @@
             if (emailInput.value) {
                 alert(`Thanks for playing, ${emailInput.value}!`);
             } else {
-                alert('Please enter a email address.');
+                alert('Please enter an email address.');
             }
         }
     </script>

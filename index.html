@@ -4,18 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoNoPoLy - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: orange; /* Background color changed to orange */
-            color: white;
-            text-align: center;
-            height: 100vh; /* Full viewport height */
+            font-family: 'Poppins', sans-serif;
+			background-color: orange,white;
+            
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            color: black;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: 0;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center; /* Vertically center items */
+            margin-bottom: 20px; /* Space below the header container */
+        }
+
+        #logo {
+            width: 250px; /* Adjusted width */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 20px; /* Space between image and heading */
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+        }
+
+        h1 {
+            font-size: 50px; /* Adjust heading size */
+            margin: 0 0 10px 0; /* Remove default margin and add space below */
         }
 
         #startButton {
@@ -24,69 +49,67 @@
             background-color: #28a745;
             padding: 10px 20px;
             border-radius: 5px;
-            font-size: 24px; /* Increased button font size */
+            font-size: 24px;
             cursor: pointer;
             display: inline-block;
+            margin-top: 10px; /* Space between heading and button */
         }
 
         #startButton:hover {
             background-color: #218838;
         }
 
-        /* Hidden by default */
         #loading {
             display: none;
-            text-align: center;
+            text-align: left; /* Align text to the left */
+            margin-top: 20px; /* Space between button and loading */
         }
 
-        /* Spinner styles */
         .spinner {
             border: 6px solid white;
             border-top: 6px solid #3498db;
             border-radius: 50%;
-            width: 80px;  /* Increased size */
-            height: 80px; /* Increased size */
+            width: 80px;
+            height: 80px;
             animation: spin 1s linear infinite;
             margin: 20px auto;
         }
 
-        /* Animation for the spinner */
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
 
-        /* Loading text style */
         #loadingText {
-            font-size: 36px; /* Increased text size */
-            color: white; /* Text color to white */
+            font-size: 36px;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <h1>FiNoPoLy-MeDias</h1>
-    <p></p>
-
-    <!-- The Start Button -->
-    <a id="startButton">START</a>
-
-    <!-- Loading spinner that will be shown after clicking the Start button -->
-    <div id="loading">
-        <div class="spinner"></div>
-        <p id="loadingText">Loading...</p>
+    <!-- Header container for image and heading -->
+    <div class="header-container">
+        <img id="logo_poly" src="D:\GCE_L1\logo_poly.jpg" alt="MoNoPoLy Logo">
+        <div class="text-container">
+            <h1>FiNoPoLy-MeDias</h1>
+            <a id="startButton">Go</a>
+            <div id="loading">
+                <div class="spinner"></div>
+                <p id="loadingText">LoaDing...</p>
+            </div>
+        </div>
     </div>
 
     <script>
         // Add a click event listener to the start button
         document.getElementById('startButton').addEventListener('click', function() {
-            // Hide the Start button and show the loading spinner
             document.getElementById('startButton').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
 
-            // Simulate loading time (e.g., 3 seconds) before navigating to welcome.html
+            // Simulate loading time before navigating to welcome.html
             setTimeout(function() {
                 window.location.href = 'welcome.html';
-            }, 3000); // 3000 milliseconds = 3 seconds
+            }, 3000); // 3 seconds delay
         });
     </script>
 </body>
