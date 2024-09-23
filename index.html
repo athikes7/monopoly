@@ -7,26 +7,87 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: orange; /* Background color changed to orange */
+            color: white;
             text-align: center;
-            padding-top: 50px;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
         }
-        a {
+
+        #startButton {
             text-decoration: none;
             color: white;
             background-color: #28a745;
             padding: 10px 20px;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 24px; /* Increased button font size */
+            cursor: pointer;
+            display: inline-block;
         }
-        a:hover {
+
+        #startButton:hover {
             background-color: #218838;
+        }
+
+        /* Hidden by default */
+        #loading {
+            display: none;
+            text-align: center;
+        }
+
+        /* Spinner styles */
+        .spinner {
+            border: 6px solid white;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            width: 80px;  /* Increased size */
+            height: 80px; /* Increased size */
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        /* Animation for the spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Loading text style */
+        #loadingText {
+            font-size: 36px; /* Increased text size */
+            color: white; /* Text color to white */
         }
     </style>
 </head>
 <body>
-    <h1>MoNoPoLy</h1>
-    <p>Click the button below to navigate to the Welcome page.</p>
-    <a href="welcome.html">Go to Welcome Page</a>
+    <h1>FiNoPoLy-MeDias</h1>
+    <p></p>
+
+    <!-- The Start Button -->
+    <a id="startButton">START</a>
+
+    <!-- Loading spinner that will be shown after clicking the Start button -->
+    <div id="loading">
+        <div class="spinner"></div>
+        <p id="loadingText">Loading...</p>
+    </div>
+
+    <script>
+        // Add a click event listener to the start button
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Hide the Start button and show the loading spinner
+            document.getElementById('startButton').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+
+            // Simulate loading time (e.g., 3 seconds) before navigating to welcome.html
+            setTimeout(function() {
+                window.location.href = 'welcome.html';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
 </body>
 </html>
